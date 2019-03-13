@@ -1,0 +1,234 @@
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 10051
+Content-Type: text/html; charset=gb2312
+Server: Microsoft-IIS/7.0
+X-AspNet-Version: 1.1.4322
+X-Frame-Options: SAMEORIGIN
+X-Powered-By: ASP.NET
+Date: Wed, 13 Mar 2019 06:11:16 GMT
+
+<script language='javascript'>
+<!--
+ window.top.document.location.replace("../MAINFRM.aspx");
+//-->
+</script>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" > 
+
+<html>
+  <head>
+    <title>安徽文达信息工程学院</title>
+    <meta name="GENERATOR" Content="Microsoft Visual Studio .NET 7.1">
+    <meta name="CODE_LANGUAGE" Content="C#">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name=vs_defaultClientScript content="JavaScript">
+    <meta name=vs_targetSchema content="http://schemas.microsoft.com/intellisense/ie5">
+    <LINK href="../_Style/Styles_index.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="../js/jquery.min.js"></script>    
+    <script language="javascript" type="text/javascript">
+		var jq = jq$ = j$ = jQuery.noConflict();    
+        javascript:window.history.forward(1);
+        function showvc()
+		{
+			$("imgCode").style.display = "";
+		}
+		function returnValue() {
+            try { window.location.href = "login_new.aspx"; } catch (e) { alert(e); }
+        }
+        
+         j$(function()
+		 {
+				j$("#qr_btn").click(function(){
+					parent.openqrwindow();
+				}
+				);
+		 }
+        )
+	</script>
+		<script type="text/javascript" src="../js/global.js"></script>
+		<script type="text/javascript" src="../js/md5.js"></script>
+		<script type="text/javascript">
+function ChkValue(){
+ var vU=$('UID').innerHTML;
+ vU=vU.substring(0,1)+vU.substring(2,3);
+ var vcFlag = "YES"; if ($('txt_asmcdefsddsd').value==''){
+ alert('须录入'+vU+'！');$('txt_asmcdefsddsd').focus();return false;
+}
+ else if ($('txt_pewerwedsdfsdff').value==''){
+ alert('须录入密码！');$('txt_pewerwedsdfsdff').focus();return false;
+}
+ else if ($('txt_sdertfgsadscxcadsads').value=='' && vcFlag == "YES"){
+ alert('须录入验证码！');$('txt_sdertfgsadscxcadsads').focus();return false;
+}
+ else { $('divLogNote').innerHTML='<font color="red">正在通过身份验证...请稍候!</font>';
+   document.getElementById("txt_pewerwedsdfsdff").value = '';
+ document.getElementById("txt_sdertfgsadscxcadsads").value = ''; 
+ return true;}
+ }
+function SelType(obj){
+ var s=obj.options[obj.selectedIndex].getAttribute('usrID');
+ $('UID').innerHTML=s;
+ selTyeName();
+ if(obj.value=="STU") {
+   document.all.btnGetStuPwd.style.display='';
+   document.all.btnReset.style.display='none';
+  }
+ else {
+    document.all.btnReset.style.display='';
+    document.all.btnGetStuPwd.style.display='none';
+  }}
+function openWinLog(theURL,w,h){
+var Tform,retStr;
+eval("Tform='width="+w+",height="+h+",scrollbars=no,resizable=no'");
+pop=window.open(theURL,'winKPT',Tform); //pop.moveTo(0,75);
+eval("Tform='dialogWidth:"+w+"px;dialogHeight:"+h+"px;status:no;scrollbars=no;help:no'");
+pop.moveTo((screen.width-w)/2,(screen.height-h)/2);if(typeof(retStr)!='undefined') alert(retStr);
+}
+function showLay(divId){
+var objDiv = eval(divId);
+if (objDiv.style.display=="none")
+{objDiv.style.display="";}
+else{objDiv.style.display="none";}
+}
+function selTyeName(){
+  $('typeName').value=$N('Sel_Type')[0].options[$N('Sel_Type')[0].selectedIndex].text;
+}
+window.onload=function(){
+	var sPC=MSIE?window.navigator.userAgent+window.navigator.cpuClass+window.navigator.appMinorVersion+' SN:NULL':window.navigator.userAgent+window.navigator.oscpu+window.navigator.appVersion+' SN:NULL';
+try{$('pcInfo').value=sPC;}catch(err){}
+try{$('txt_asmcdefsddsd').focus();}catch(err){}
+try{$('typeName').value=$N('Sel_Type')[0].options[$N('Sel_Type')[0].selectedIndex].text;}catch(err){}
+}
+function openWinDialog(url,scr,w,h)
+{
+var Tform;
+eval("Tform='dialogWidth:"+w+"px;dialogHeight:"+h+"px;status:"+scr+";scrollbars=no;help:no'");
+window.showModalDialog(url,1,Tform);
+}
+function openWin(theURL){
+var Tform,w,h;
+try{
+	w=window.screen.width-10;
+}catch(e){}
+try{
+h=window.screen.height-30;
+}catch(e){}
+try{eval("Tform='width="+w+",height="+h+",scrollbars=no,status=no,resizable=yes'");
+pop=parent.window.open(theURL,'',Tform);
+pop.moveTo(0,0);
+parent.opener=null;
+parent.close();}catch(e){}
+}
+function changeValidateCode(Obj){
+var dt = new Date();
+Obj.src="../sys/ValidateCode.aspx?t="+dt.getMilliseconds();
+}
+function chkpwd(obj) {  if(obj.value!='')  {    var s=md5(document.all.txt_asmcdefsddsd.value+md5(obj.value).substring(0,30).toUpperCase()+'12810').substring(0,30).toUpperCase();   document.all.dsdsdsdsdxcxdfgfg.value=s;} else { document.all.dsdsdsdsdxcxdfgfg.value=obj.value;}chkLxstr(obj.value); }  function chkyzm(obj) {  if(obj.value!='') {   var s=md5(md5(obj.value.toUpperCase()).substring(0,30).toUpperCase()+'12810').substring(0,30).toUpperCase();   document.all.fgfggfdgtyuuyyuuckjg.value=s;} else {    document.all.fgfggfdgtyuuyyuuckjg.value=obj.value.toUpperCase();}} function chkLxstr(str) 
+ {
+ if (str!='') { var arr = str.split('');
+for (var i = 1; i < arr.length-1; i++) {
+   var firstIndex = arr[i-1].charCodeAt();
+   var secondIndex = arr[i].charCodeAt();
+   var thirdIndex = arr[i+1].charCodeAt();
+   thirdIndex - secondIndex == 1;
+    secondIndex - firstIndex==1;
+   if(((thirdIndex - secondIndex == 1)&&(secondIndex - firstIndex==1) ) || (thirdIndex==secondIndex && secondIndex==firstIndex)){
+      document.getElementById('txt_mm_lxpd').value='1'; 
+   }
+ }
+ }
+}
+
+</script>
+  </head>
+ <body oncontextmenu="return false" ondragstart="return false" style="background-color:#FDFDFD" onsource="return false" leftMargin="0" topMargin="0">
+		<table id="divThePanel" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td>
+	
+		<form name="Logon" method="post" action="login_new.aspx" id="Logon" onsubmit="return ChkValue();" autocomplete="off">
+	<input type="hidden" name="__VIEWSTATE" value="dDw5MDM2NjQxMjI7Oz4t83munvflvDgT6goY0GLNq6hahw==" />
+
+			<input id="pcInfo" type="hidden" name="pcInfo">
+			<input id="typeName" type="hidden" name="typeName">
+			<input type="hidden" id="dsdsdsdsdxcxdfgfg" name="dsdsdsdsdxcxdfgfg">
+			<input type="hidden" id="fgfggfdgtyuuyyuuckjg" name="fgfggfdgtyuuyyuuckjg">
+			<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+			    <tr>
+						<td align="left" width="290" height="35" style="padding-left:1px;">
+							<img width="290px" height="35" src="../images/index/d_userlogin.gif" />
+							<!--<div style="width:290px;height:35px;padding-left:35px;padding-top:8px;font-size:11pt;color:white;font-weight:bold;BACKGROUND-IMAGE: url(../images/index/d_userlogin_1.gif)">用户登录</div>-->
+						</td>
+					</tr>
+				<tr><td width="100%" height="175" align="center" valign="middle" >
+					<table height="160" cellSpacing="0" cellPadding="0" border="0" >
+					<tr>
+						<td align="center" width="50" height="26" style="color:#18749B;">身　份</td>
+						<td  height="26">
+							<select style="WIDTH: 136px;" onchange="SelType(this)" name="Sel_Type">
+								<option value='STU' usrID='学　号'>学生</option>
+<option value='TEA' usrID='工　号'>教师教辅人员</option>
+<option value='SYS' usrID='帐　号'>管理人员</option>
+<option value='ADM' usrID='帐　号'>门户维护员</option>
+
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td id="UID" align="center" width="50" height="26" style="color:#18749B;">学　号</td>
+						<td height="26"><input name="txt_asmcdefsddsd" id="txt_asmcdefsddsd" type="text" class="tx1" style="WIDTH: 134px; HEIGHT: 20px;border:1px solid #18749B;background-color:#FEFFFF" maxlength="20" autocomplete="off" />
+						</td>
+					</tr>
+					<tr>
+						<td noWrap id="PWD" align="center" width="50" height="26" style="color:#18749B;">密　码</td>
+						<td width="120" height="26">
+						<input class="tx1" id="txt_pewerwedsdfsdff" style="WIDTH:134px;HEIGHT:20px;border:1px solid #18749B;background-color:#FEFFFF" type="password" maxLength="25" name="txt_pewerwedsdfsdff" autocomplete="off" onblur="chkpwd(this)" onkeyup="chkpwd(this)">
+						</td>						
+					</tr>
+					<tr >
+						<td align="center" width="50" height="26" style="color:#18749B;" >验证码</td>
+						<td height="26">
+						<input class="tx1" onclick="showvc()" onfocus="showvc()" id="txt_sdertfgsadscxcadsads" name="txt_sdertfgsadscxcadsads" style="WIDTH:50px;HEIGHT:20px;margin-bottom:4px;border:1px solid #18749B;background-color:#FEFFFF" maxlength="4" autocomplete="off" onblur="chkyzm(this)" onkeyup="chkyzm(this)">
+						<img id="imgCode" src="../sys/ValidateCode.aspx" onclick="changeValidateCode(this)" alt="单击可更换图片！" style="display:none;WIDTH:80px;HEIGHT:20px;CURSOR:pointer;margin:0px;">						
+						</td>
+					</tr>
+					<tr>										
+						<td vAlign="bottom" align="center" height="26" colspan=2>&nbsp;&nbsp;
+						<input class="btnlogin" type="submit" value="">
+						<input class="btnforget" style="CURSOR:pointer;" type="button" value="" name="btnGetStuPwd" id="btnGetStuPwd" onclick=openWinLog("ReSet_PassWord.aspx",600,300)><input class="btnreset" name="btnReset" id="btnReset" style="CURSOR:pointer;display:none" type="reset" value=""> <input type="hidden" id="txt_mm_lxpd" name="txt_mm_lxpd" value="" /> 
+						<input type=button class="btnqrcode" id="qr_btn" name="qr_btn" style='display:none' value="" />		
+						</td>
+					</tr>
+								
+				</TABLE>
+				</td></tr>
+				<tr><td height="35">
+					<div align="center"><span id="divLogNote"><font color="#18749B">正在加载权限数据...</font></span></div>
+				</td></tr>
+			</table>
+		</form>		
+	
+</td></tr></table>
+										
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+    var param=window.location.href.toString().toLowerCase();
+	if(param.indexOf("default_new_njjd.aspx") > -1 )
+	{		
+		param = param.substring(0,param.length-25);
+	}
+	else
+	{
+		param = param.substring(0,param.length-20);	
+	}
+	var xp=parent.window.location.href.toString().toLowerCase();
+	if(xp!=param && xp!=param+"default_new.aspx"&& xp!=param+"default_new_njjd.aspx")
+	{
+		if(("4"=="4" && xp!=param+"default.aspx" && xp!=param+"index.aspx" && xp!=param+"index_new.aspx"&&xp!=param+"index_new_njjd.aspx")||("4"!="4"))
+		window.top.location.href="../_help/Sorry.aspx?str=系统出错！";
+	}
+
+</script>
+
+缁撴潫
