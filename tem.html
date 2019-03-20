@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tem</title>
+	 <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+       <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+       <script src="https://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.js"></script>
+     <link href="https://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.css" rel="stylesheet"> 
+      <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style type="text/css">
+
+.sc-box{
+	padding: 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	
+	margin: 10px;
+
+}
+.sc-head{
+		font-weight: bolder;
+}
+.sc-h{
+		font-weight: bold;
+}
+.sc-name-bad{
+    color: #FF4500;
+
+}
+.sc-name-ok{
+		color:#5CACEE;
+}
+</style>
+<script type="text/javascript">
+
+$(function(){
+	$('.sc-scores').each(function(){
+		console.log($(this).data('scores'));
+		if(parseInt($(this).data('scores')) >= 60){
+				$(this).css({
+					color:"#5CACEE"
+				})
+		}else{
+			$(this).css({
+					color:"#FF4500"
+				})
+		}
+	})
+	
+})
+
+</script>
+</head>
+<body>
+	<div class="app">
+			<div class="row sc-box">
+					<div class="col-sm-12 text-center sc-head"><p>2017-2018学年第一学期</p></div>
+					<div class="col-sm-12 sc-h"><p>思想道德修养与法律基础</p></div>
+					<div class="col-sm-6 col-md-6 com-xs-6"><p>学分：3分</p></div>
+					<div class="col-sm-6 col-md-6 col-xs-6"><p>类别：必修课/公共课</p></div>
+					<div class="col-sm-6 col-md-6 col-xs-6"><p>方式：考察</p></div>
+					<div class="col-sm-6 sc-scores col-md-6 col-xs-6"  data-scores = "59.00"><p>分数：59.00</p></div>
+			</div>
+			<div class="row sc-box">
+					<div class="col-sm-12 text-center"><p></p></div>
+					<div class="col-sm-12"><p>思想道德修养与法律基础</p></div>
+					<div class="col-sm-6 col-md-6 com-xs-6"><p>学分：3分</p></div>
+					<div class="col-sm-6 col-md-6 col-xs-6"><p>类别：必修课/公共课</p></div>
+					<div class="col-sm-6 col-md-6 col-xs-6"><p>方式：考察</p></div>
+					<div class="col-sm-6 sc-scores col-md-6 col-xs-6" data-scores = "90.00"><p>分数：90.00</p></div>
+			</div>
+	</div>
+
+
+
+</body>
+</html>
