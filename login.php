@@ -181,10 +181,10 @@ function echoScores($scoresArray)
     <title>一键查成绩</title>
       <meta charset="utf-8">
      <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-       <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-       <script src="https://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.js"></script>
-     <link href="https://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.css" rel="stylesheet"> 
-      <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+         <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style type="text/css">
 body{
   background:#3CB371
