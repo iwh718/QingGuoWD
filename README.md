@@ -7,3 +7,7 @@
 可以直接修改Url适配自己的学校。
 ![Image text](./examples_img/login.png)
 ![Image text](./examples_img/scores.png)
+
+新增贵州职业技术学院：适配验证码与学校代号。
+
+注意：适配一般要注意本校的验证码链接与学校代号。
