@@ -12,4 +12,5 @@
 可以直接修改Url适配自己的学校。
 ![Image text](./examples_img/login.png)
 ![Image text](./examples_img/scores.png)
-介入易班轻应用：[了解更多](https://github.com/iwh718/YBAPI)
+
+##接入易班轻应用：[了解更多](https://github.com/iwh718/YBAPI)
