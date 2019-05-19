@@ -13,3 +13,4 @@
 ![Image text](./examples_img/login.png)
 ![Image text](./examples_img/scores.png)
 
+##接入易班轻应用：[了解更多](https://github.com/iwh718/YBAPI)
