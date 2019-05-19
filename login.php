@@ -17,19 +17,22 @@ header("Content-type:text/html;charset=utf-8");
  * @param String $loginUrl 登录链接
  */
 
-function Login($loginUrl = 'http://218.22.58.76:2346/_data/login_new.aspx')
+function Login($loginUrl = 'http://218.22.58.76:2346/_data/login_home.aspx')
 {
 
 
     $pcInfo = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0Windows NT 10.0; WOW645.0 (Windows) SN:NULL";
     $data = array(
+        'txt_mm_expression' =>'',
+        'txt_mm_length' =>'',
+        'txt_mm_userzh' =>'',
+        'txt_pewerwedsdfsdff' =>'',
+         'txt_sdertfgsadscxcadsads' => '',
         'fgfggfdgtyuuyyuuckjg' => $_POST['fgfggfdgtyuuyyuuckjg'],
         'dsdsdsdsdxcxdfgfg' => $_POST['dsdsdsdsdxcxdfgfg'],
         'txt_asmcdefsddsd' => $_POST['txt_asmcdefsddsd'],
-        'txt_pewerwedsdfsdff' => '',
-        'txt_sdertfgsadscxcadsads' => '',
-        'typeName' => iconv("UTF-8", "gb2312//IGNORE", "学生"),
-        'sbtState' => '',
+       'typeName' => iconv("UTF-8","GB2312//IGNORE","学生"),
+       'txt_psasas'=> iconv("UTF-8","GB2312//IGNORE","请输入密码"),
         'Sel_Type' => 'STU',
         'pcInfo' => $pcInfo,
         '__VIEWSTATE' => $_SESSION['__VIEWSTATE']
@@ -40,19 +43,19 @@ function Login($loginUrl = 'http://218.22.58.76:2346/_data/login_new.aspx')
     $header[] = "User-Agent:Mozilla/5.0 (Windows NT 10.0; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0Windows NT 10.0; WOW645.0 (Windows) SN:NULL";
     $header[] = "Host:218.22.58.76:2346";
     $header[] = "Content-Type: application/x-www-form-urlencoded";
-    $header[] = "Referer: http://218.22.58.76:2346/_data/login_new.aspx";
+    $header[] = "Referer: http://218.22.58.76:2346/_data/login_home.aspx";
     $header[] = "Origin: http://218.22.58.76:2346";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $loginUrl);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);//设置请求头，青果会通过请求头来验证请求是否为爬虫
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
     curl_setopt($ch, CURLOPT_POST, 1);//请求方式为post
     curl_setopt($ch, CURLOPT_HEADER, true); //返回结果带头信息
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_AUTOREFERER, true);
+   
     curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-    curl_setopt($ch, CURLOPT_COOKIE, $_SESSION['cookie']); //带上sessionCookie值
+    curl_setopt($ch, CURLOPT_COOKIEFILE,dirname(__FILE__)."/cookie.tmp"); //带上sessionCookie值
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);//写入post信息
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    //curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 //写入文件，检查是否登录成功
     $result = curl_exec($ch);
     $file = dirname(__FILE__) . "/result.html";
@@ -64,29 +67,30 @@ function Login($loginUrl = 'http://218.22.58.76:2346/_data/login_new.aspx')
     $nums = substr_count($result, "验证码错误");
     $nums2 = substr_count($result, "帐号已被锁定");
     $nums3 = substr_count($result, "帐号或密码不正确");
+    
+
     if ($nums >= 1) {
         echo
         "<script>
    alert('验证码错误！！');
-   location.href = './WdClass.php';
+   location.href = 'http://f.yiban.cn/iapp390020';
    </script>";
         die();
     } elseif ($nums2 >= 1) {
         echo
         "<script>
    alert('提示：由于你的账号或密码多次输入错误，已被锁定，去文鼎楼处理吧！');
-    location.href = './WdClass.php';
+    location.href = 'http://f.yiban.cn/iapp390020';
    </script>";
         die();
     } elseif ($nums3 >= 1) {
         echo
         "<script>
    alert('温馨提示：账号或者密码错误，请不要超过三次！');
-    location.href = './WdClass.php';
+    location.href = 'http://f.yiban.cn/iapp390020';
    </script>";
         die();
     }
-
 
 }
 
@@ -118,7 +122,7 @@ function getScores($scoresUrl = "http://218.22.58.76:2346/xscj/Stu_cjfb_rpt.aspx
     curl_setopt($chScore, CURLOPT_HEADER, false); //返回结果带头信息
     curl_setopt($chScore, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($chScore, CURLOPT_TIMEOUT, 30);
-    curl_setopt($chScore, CURLOPT_COOKIE, $_SESSION['cookie']); //带上session值
+   curl_setopt($chScore, CURLOPT_COOKIEFILE,dirname(__FILE__)."/cookie.tmp"); 
     curl_setopt($chScore, CURLOPT_POSTFIELDS, $dataScore);//写入post信息
     curl_setopt($chScore, CURLOPT_FOLLOWLOCATION, 1);
 
@@ -230,7 +234,7 @@ $(function(){
   <body>
 
 <div class="">
-  <div  class="text-center panel-heading">同学，入学以来成绩<br>你一共挂了 {$_SESSION['maxBad']} 个课程,{$note} &nbsp;&nbsp;<span class='fa fa-times-circle-o fa-2x' onclick="location.href = './WdClass.php';"></span></div>
+  <div  class="text-center panel-heading">{$_SESSION['userName']}同学，入学以来成绩<br>你一共挂了 {$_SESSION['maxBad']} 个课程,{$note} &nbsp;&nbsp;<span class='fa fa-times-circle-o fa-2x' onclick="location.href = 'http://f.yiban.cn/iapp390020';"></span></div>
  <div class="panel-body">
 
 SCORE;
@@ -260,10 +264,7 @@ SCORE2;
 }
 
 
-//Cookie
-$cookie = $_SESSION['cookie'];
-//DOM状态值
-$__VIEWSTATE = $_SESSION['__VIEWSTATE'];
+
 //调用登录
 Login();
 //输出成绩
